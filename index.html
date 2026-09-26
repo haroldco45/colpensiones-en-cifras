@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colpensiones en cifras · ¿Quién paga las pensiones?</title>
+<meta name="description" content="Cuánta plata de los impuestos gira la Nación a Colpensiones, por qué crece y qué viene en 2027. Datos del PGN, DANE y MinTrabajo.">
+<meta name="theme-color" content="#EB0A1E">
+<meta property="og:title" content="Colpensiones en cifras: de $11,3 a $41 billones">
+<meta property="og:description" content="Lo que la Nación le gira a Colpensiones, año por año, y lo que se discute hoy.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://haroldco45.github.io/colpensiones-en-cifras/">
+<meta property="og:image" content="https://haroldco45.github.io/colpensiones-en-cifras/og-image.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://haroldco45.github.io/colpensiones-en-cifras/og-image.png?v=1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Colpensiones">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#000000; --red:#EB0A1E; --gray:#58595B; --soft:#F2F2F2; --line:#D9D9D9; --bar2:#000000;
+  --font:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --cond:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#000000;--ink:#FFFFFF;--gray:#B3B3B3;--soft:#161616;--line:#333333;--bar2:#FFFFFF}
+}
+:root[data-theme="dark"]{--bg:#000000;--ink:#FFFFFF;--gray:#B3B3B3;--soft:#161616;--line:#333333;--bar2:#FFFFFF}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:6px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{white-space:nowrap;font-size:16px;display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px;text-decoration:none}
+.brand i{width:26px;height:26px;border-radius:50%;border:3px solid var(--red);display:inline-block;position:relative}
+.brand i::after{content:"";position:absolute;inset:5px 9px;background:var(--red);border-radius:2px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 20px;max-width:760px;margin:0 auto}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{flex:0 0 auto;text-decoration:none;font-weight:600;font-size:15px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line)}
+nav.tabs a:hover{border-color:var(--ink)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 var(--font);padding:14px 22px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.sm{padding:9px 16px;font-size:14px}
+
+/* Hero */
+.hero{padding-top:40px;padding-bottom:28px}
+.hero h1{font-family:var(--cond);font-weight:800;font-size:clamp(44px,11vw,84px);line-height:.92;margin:0 0 18px;letter-spacing:-.5px}
+.hero p.lead{font-size:19px;color:var(--gray);margin:0 0 26px;max-width:34em}
+.duel{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center;margin:0 0 28px}
+.duel .yr{font-family:var(--cond);font-weight:700;font-size:22px}
+.duel .track{height:44px;background:var(--soft);border-radius:999px;overflow:hidden}
+.duel .fill{height:100%;border-radius:999px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;white-space:nowrap;color:#fff;font-family:var(--cond);font-weight:700;font-size:22px;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.duel .a .fill{background:var(--gray)}
+.duel .b .fill{background:var(--red)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.stamp{font-size:14px;color:var(--gray);margin-top:18px}
+
+/* Sections */
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--cond);font-weight:800;font-size:clamp(34px,7vw,52px);line-height:1;margin:0 0 12px}
+h3{font-size:20px;margin:28px 0 8px}
+p{margin:0 0 14px;max-width:38em}
+.muted{color:var(--gray)}
+.small{font-size:14px}
+
+/* Chart A */
+.seg{display:inline-flex;background:var(--soft);border-radius:999px;padding:4px;margin:10px 0 18px}
+.seg button{font:600 15px var(--font);border:0;background:transparent;color:var(--ink);padding:9px 16px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.bars{display:grid;gap:5px}
+.row{display:grid;grid-template-columns:44px 1fr 58px;gap:10px;align-items:center;border:0;background:none;padding:2px 0;font:inherit;color:inherit;text-align:left;cursor:pointer;width:100%}
+.row .y{font-weight:600;font-size:15px}
+.row .t{display:block;height:20px;background:var(--soft);border-radius:999px;overflow:hidden}
+.row .f{display:block;height:100%;border-radius:999px;background:var(--bar2);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.row.hot .f{background:var(--red)}
+.row.proj .f{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px)}
+.row .v{font-family:var(--cond);font-weight:700;font-size:19px;text-align:right}
+.row[aria-pressed="true"] .y{color:var(--red)}
+.detail{margin-top:18px;background:var(--soft);border-radius:18px;padding:18px 20px;min-height:84px}
+.detail strong{font-family:var(--cond);font-size:26px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:22px}
+.fact{border:2px solid var(--ink);border-radius:18px;padding:16px 18px}
+.fact b{display:block;font-family:var(--cond);font-weight:800;font-size:40px;line-height:1}
+.fact.red{border-color:var(--red)}
+.fact.red b{color:var(--red)}
+.note{border-left:4px solid var(--red);padding:4px 0 4px 14px;margin:22px 0 0}
+
+/* Births */
+.cols{display:flex;align-items:flex-end;gap:6px;height:190px;margin:16px 0 6px}
+.cols div{flex:1;background:var(--bar2);border-radius:8px 8px 3px 3px;position:relative;min-width:0}
+.cols div.last{background:var(--red)}
+.cols div span{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;white-space:nowrap}
+.colx{display:flex;gap:6px;font-size:12px;color:var(--gray)}
+.colx span{flex:1;text-align:center}
+.scroll{overflow-x:auto}
+.scroll>*{min-width:520px}
+svg text{font-family:var(--font)}
+
+/* Timeline */
+ol.tl{list-style:none;margin:18px 0 0;padding:0;border-left:3px solid var(--line)}
+ol.tl li{position:relative;padding:0 0 20px 22px}
+ol.tl li::before{content:"";position:absolute;left:-9px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--ink)}
+ol.tl li.now::before{border-color:var(--red);background:var(--red)}
+ol.tl time{font-weight:700;display:block}
+
+/* Two views */
+.views{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+.view{border-radius:22px;padding:22px;background:var(--soft)}
+.view h3{margin-top:0}
+.view ul{margin:0;padding-left:18px}
+.view li{margin-bottom:8px}
+
+/* Sources */
+ul.src{padding-left:18px}
+ul.src li{margin-bottom:8px}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:15px}
+footer .wrap{display:flex;flex-direction:column;gap:14px}
+
+/* Share bar mobile */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px}
+.dock .btn{flex:1}
+@media (min-width:780px){.dock{display:none}}
+@media (max-width:779px){footer{padding-bottom:110px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><i aria-hidden="true"></i>Colpensiones en cifras</a>
+    <button class="btn sm red" id="shareTop" type="button">Compartir</button>
+  </div>
+  <nav class="tabs" aria-label="Secciones">
+    <a href="#giros">Los giros</a>
+    <a href="#poblacion">Población</a>
+    <a href="#hoy">Qué pasa hoy</a>
+    <a href="#debate">El debate</a>
+    <a href="#fuentes">Fuentes</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <h1>¿Quién paga las pensiones de Colpensiones?</h1>
+    <p class="lead">Una parte la ponen los cotizantes. Otra, cada vez más grande, sale del Presupuesto General de la Nación, es decir, de los impuestos de todos.</p>
+    <div class="duel" aria-label="Transferencias de la Nación a Colpensiones, pesos corrientes">
+      <span class="yr">2022</span><div class="track a"><div class="fill" data-w="27.6">$11,3</div></div>
+      <span class="yr">2027</span><div class="track b"><div class="fill" data-w="100">$41 billones</div></div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#giros">Ver año por año</a>
+      <a class="btn ghost" href="#debate">Ver las dos posturas</a>
+    </div>
+    <p class="stamp">Billones de pesos. 2027 es la cuota asignada por Hacienda. Actualizado el 26 de septiembre de 2026, hora de Colombia.</p>
+  </div>
+
+  <section id="giros">
+    <div class="wrap">
+      <h2>Lo que gira la Nación, año por año</h2>
+      <p class="muted">Transferencias del Presupuesto General de la Nación a Colpensiones, 2012 a 2027. Toque un año para ver el detalle.</p>
+      <div class="seg" role="group" aria-label="Tipo de pesos">
+        <button type="button" data-mode="c" aria-pressed="true">Pesos de cada año</button>
+        <button type="button" data-mode="k" aria-pressed="false">Pesos de hoy</button>
+      </div>
+      <div class="bars" id="bars"></div>
+      <div class="detail" id="detail" aria-live="polite"></div>
+      <div class="facts">
+        <div class="fact red"><b>+263%</b>De 2022 a 2027 en pesos de cada año (11,3 a 41,0).</div>
+        <div class="fact"><b>+162%</b>De 2022 a 2027 descontando inflación (14,9 a 39,0).</div>
+      </div>
+      <p class="note small">El video de origen habla de "176% en 6 años". Con su misma gráfica, ese número sale de comparar 2022 en pesos de hoy contra 2027 en pesos de cada año. Aquí mostramos las dos cuentas por separado. Las barras rayadas son proyecciones; "pesos de hoy" supone inflación de 5,5% en 2026 y 4,5% en 2027.</p>
+    </div>
+  </section>
+
+  <section id="poblacion">
+    <div class="wrap">
+      <h2>Menos cotizantes, pensionados que viven más</h2>
+      <p>En un sistema de reparto, los que cotizan hoy pagan las mesadas de hoy. Por eso importa cuántos nacen, cuántos trabajan con contrato y cuántos años vive cada pensionado.</p>
+
+      <h3>Nacimientos en Colombia</h3>
+      <p class="muted small">DANE, Estadísticas Vitales. En 2025 nacieron 441.537 personas: 2,7% menos que en 2024 y 32,8% menos que en 2017, el año más alto de la serie.</p>
+      <div class="scroll"><div>
+        <div class="cols" id="births"></div>
+        <div class="colx" id="birthsX"></div>
+      </div></div>
+
+      <h3>Esperanza de vida al nacer</h3>
+      <p class="muted small">Serie del DANE mostrada en el video. El promedio nacional pasa de 75,4 años en 2015 a 77,6 en 2025, y se proyecta en 79,7 para 2035.</p>
+      <div class="scroll"><svg id="life" viewBox="0 0 560 230" role="img" aria-label="Esperanza de vida: mujeres, total y hombres, 2005 a 2035"></svg></div>
+
+      <div class="facts">
+        <div class="fact"><b>-32,8%</b>Nacimientos, 2017 frente a 2025.</div>
+        <div class="fact"><b>+2,2 años</b>Esperanza de vida total, 2015 frente a 2025.</div>
+        <div class="fact red"><b>52%</b>Informalidad laboral citada en el video: gente que trabaja sin cotizar.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hoy">
+    <div class="wrap">
+      <h2>Qué está pasando, septiembre de 2026</h2>
+      <ol class="tl">
+        <li><time>1 de octubre de 2012</time>Colpensiones empieza a operar, en reemplazo del Seguro Social.</li>
+        <li><time>7 de agosto de 2026</time>Renuncia Jaime Dussán a la presidencia de Colpensiones, tras 44 meses. Queda un presidente encargado.</li>
+        <li><time>9 de septiembre de 2026</time>La ministra del Trabajo, Natalia López, dice en el Congreso que Colpensiones necesita $96,8 billones en 2027: unos $50 propios y $46 de la Nación. Hacienda asignó $41, así que faltan $4,84 billones.</li>
+        <li><time>17 y 21 de septiembre</time>La Junta Directiva elige a Carlos René Montoya; se posesiona ante el presidente Abelardo de la Espriella.</li>
+        <li class="now"><time>23 y 24 de septiembre</time>Montoya no logra sustentar el presupuesto 2027 ante la Comisión Séptima del Senado. Al día siguiente, el presidente le pide la renuncia y él la presenta.</li>
+        <li><time>1 de abril de 2027</time>Fecha prevista para que entre en vigor la reforma pensional (Ley 2381 de 2024).</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="debate">
+    <div class="wrap">
+      <h2>Dos maneras de leer las mismas cifras</h2>
+      <p>Nadie discute que los giros crecieron. Lo que se discute es qué hacer. Estas son las dos posturas principales, contadas por sus defensores.</p>
+      <div class="views">
+        <div class="view">
+          <h3>Pasar a capitalización</h3>
+          <ul>
+            <li>El reparto es deficitario por diseño: con menos nacimientos, más informalidad y pensionados que viven más, el hueco solo crece.</li>
+            <li>Las alzas del salario mínimo desde 2022 subieron las mesadas y, con ellas, los giros de la Nación.</li>
+            <li>Propuesta: que lo que cotizan los trabajadores se ahorre e invierta en cuentas que siga manejando el Estado, en vez de gastarse en las mesadas del mes.</li>
+            <li>Es la postura del video de @soyjerome_ y coincide con la de Asofondos, que pide un sistema basado en el ahorro.</li>
+          </ul>
+        </div>
+        <div class="view">
+          <h3>Mantener y reforzar el sistema público</h3>
+          <ul>
+            <li>Los giros de la Nación no son solo un hueco: también pagan subsidios a mesadas bajas y deudas pensionales heredadas del Seguro Social.</li>
+            <li>La Constitución obliga al Estado a garantizar las pensiones; esa responsabilidad existe con cualquier modelo.</li>
+            <li>Pasar a capitalización tiene un costo de transición: si las cotizaciones nuevas se ahorran, los pensionados actuales se siguen pagando con impuestos durante décadas.</li>
+            <li>La reforma de 2024 ya combina las dos cosas: las cotizaciones hasta 2,3 salarios mínimos van a Colpensiones y alimentan un fondo de ahorro del pilar contributivo.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note small">Proyección oficial: el Comité Autónomo de la Regla Fiscal estimó, con la reforma pensional, un agotamiento del modelo hacia 2062. El video sostiene que, al ritmo actual de giros, ocurrirá antes.</p>
+    </div>
+  </section>
+
+  <section id="fuentes">
+    <div class="wrap">
+      <h2>Fuentes</h2>
+      <ul class="src small">
+        <li>Video "Colpensiones: entidad de papel", @soyjerome_ (Instagram, septiembre de 2026). Gráfica de transferencias elaborada por la autora con datos del PGN, indexada con el IPC del DANE.</li>
+        <li>DANE, Estadísticas Vitales: nacimientos y defunciones 2016–2025.</li>
+        <li>Ministerio del Trabajo ante el Congreso, 9 de septiembre de 2026 (reportado por <a href="https://www.infobae.com/colombia/2026/09/09/colpensiones-no-tendria-dinero-para-pagar-las-pensiones-de-10-millones-de-empleados-en-2027-el-ministerio-del-trabajo-planteo-la-solucion/" target="_blank" rel="noopener">Infobae</a>).</li>
+        <li>Renuncia de Carlos René Montoya (<a href="https://www.elcolombiano.com/negocios/renuncia-presidente-colpensiones-carlos-rene-montoya-HI41497819" target="_blank" rel="noopener">El Colombiano</a>, <a href="https://www.portafolio.co/economia/gobierno/cifras-confusas-y-vacios-tecnicos-asi-sesion-que-saco-a-carlos-rene-montoya-de-la-presidencia-de-colpensiones-503250" target="_blank" rel="noopener">Portafolio</a>).</li>
+        <li>Salida de Jaime Dussán y encargo de Diego Urrego (<a href="https://www.portafolio.co/economia/gobierno/colpensiones-cambia-de-presidente-en-plena-transicion-pensional-este-es-el-perfil-de-diego-urrego-501687" target="_blank" rel="noopener">Portafolio</a>).</li>
+        <li>Asofondos sobre el aporte de la Nación en 2026 (<a href="https://www.elcolombiano.com/negocios/deficit-pensional-colpensiones-sube-cuarenta-billones-por-aumento-salario-minimo-asofondos-JA41145149" target="_blank" rel="noopener">El Colombiano</a>).</li>
+      </ul>
+      <p class="small muted">El valor de 2014 en pesos de hoy (≈19,9) se estimó por el largo de la barra porque la etiqueta aparece cortada en el video.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <button class="btn red" id="shareFoot" type="button">Compartir por WhatsApp</button>
+    <span class="muted">Una herramienta ciudadana de <strong>Vibras Positivas HM</strong>, Caucasia, Antioquia.</span>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn ghost" href="#giros">Ver cifras</a>
+  <button class="btn red" id="shareDock" type="button">Compartir</button>
+</div>
+
+<script>
+const T=[[2012,8.0,16.0],[2013,8.8,17.5],[2014,10.3,19.9],[2015,7.1,13.0],[2016,10.7,18.5],[2017,9.0,14.8],[2018,10.7,17.0],[2019,12.3,18.9],[2020,11.2,16.7],[2021,11.8,17.0],[2022,11.3,14.9],[2023,15.5,18.4],[2024,19.0,21.0],[2025,25.0,26.3],[2026,32.0,32.0],[2027,41.0,39.0]];
+const fmt=n=>n.toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1});
+let mode='c', sel=2027;
+const bars=document.getElementById('bars'), detail=document.getElementById('detail');
+
+function renderBars(){
+  const i=mode==='c'?1:2, max=41;
+  bars.innerHTML=T.map(r=>{
+    const cls=['row',r[0]>=2022?'hot':'',r[0]>=2026?'proj':''].join(' ');
+    return `<button type="button" class="${cls}" data-y="${r[0]}" aria-pressed="${r[0]===sel}">
+      <span class="y">${r[0]}</span><span class="t"><span class="f" style="width:${(r[i]/max*100).toFixed(1)}%"></span></span><span class="v">$${fmt(r[i])}</span></button>`;
+  }).join('');
+  renderDetail();
+}
+function renderDetail(){
+  const k=T.findIndex(r=>r[0]===sel), r=T[k], i=mode==='c'?1:2;
+  const prev=k>0?T[k-1]:null;
+  const ch=prev?((r[i]/prev[i]-1)*100):null;
+  const label=mode==='c'?'en pesos de ese año':'en pesos de 2026';
+  let txt=`<strong>$${fmt(r[i])} billones</strong> en ${r[0]}, ${label}.`;
+  if(ch!==null) txt+=` ${ch>=0?'Sube':'Baja'} ${fmt(Math.abs(ch))}% frente a ${prev[0]}.`;
+  if(r[0]>=2026) txt+=' Es una proyección.';
+  if(r[0]===2027) txt+=' Coincide con la cuota de $41 billones que Hacienda asignó a Colpensiones; MinTrabajo calcula que se necesitan $46.';
+  detail.innerHTML=txt;
+}
+bars.addEventListener('click',e=>{const b=e.target.closest('.row'); if(!b) return; sel=+b.dataset.y; bars.querySelectorAll('.row').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.y===sel)); renderDetail();});
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderBars();}));
+renderBars();
+
+// Births
+const B=[[2016,647521],[2017,656704],[2018,649115],[2019,642660],[2020,629402],[2021,616914],[2022,573625],[2023,515549],[2024,453901],[2025,441537]];
+document.getElementById('births').innerHTML=B.map((b,k)=>`<div class="${k===B.length-1?'last':''}" style="height:${(b[1]/680000*100).toFixed(1)}%"><span>${Math.round(b[1]/1000)} mil</span></div>`).join('');
+document.getElementById('birthsX').innerHTML=B.map(b=>`<span>${b[0]}</span>`).join('');
+
+// Life expectancy
+(function(){
+  const yrs=[2005,2010,2015,2020,2025,2030,2035];
+  const S=[['Mujeres',[76.8,77.8,78.8,79.0,80.5,81.4,82.3],'var(--red)'],['Total',[72.9,74.2,75.4,75.0,77.6,78.7,79.7],'var(--ink)'],['Hombres',[69.3,70.8,72.1,72.0,74.9,76.2,77.3],'var(--gray)']];
+  const x=i=>50+i*80, y=v=>200-(v-66)/18*170;
+  let s=`<line x1="40" x2="540" y1="200" y2="200" stroke="var(--line)"/>`;
+  yrs.forEach((yr,i)=>s+=`<text x="${x(i)}" y="222" font-size="13" text-anchor="middle" fill="var(--gray)">${yr}</text>`);
+  S.forEach(([n,v,c])=>{
+    s+=`<polyline fill="none" stroke="${c}" stroke-width="3" points="${v.map((d,i)=>x(i)+','+y(d)).join(' ')}"/>`;
+    v.forEach((d,i)=>{s+=`<circle cx="${x(i)}" cy="${y(d)}" r="4.5" fill="${c}"/>`; if(i%2===0||i===6) s+=`<text x="${x(i)}" y="${y(d)-10}" font-size="12" font-weight="600" text-anchor="middle" fill="${c}">${String(d).replace('.',',')}</text>`;});
+    s+=`<text x="548" y="${y(v[6])+4}" font-size="12" font-weight="700" fill="${c}" text-anchor="end" dx="12"></text>`;
+  });
+  s+=`<text x="44" y="16" font-size="13" font-weight="700" fill="var(--red)">Mujeres</text><text x="112" y="16" font-size="13" font-weight="700" fill="var(--ink)">Total</text><text x="160" y="16" font-size="13" font-weight="700" fill="var(--gray)">Hombres</text>`;
+  document.getElementById('life').innerHTML=s;
+})();
+
+// Hero animation
+requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('.duel .fill').forEach(f=>f.style.width=f.dataset.w+'%'),150));
+
+// Share
+function share(){
+  const url=location.href.split('#')[0];
+  const text='La Nación pasó de girarle $11,3 billones a Colpensiones en 2022 a $41 billones en 2027. Mire las cifras año por año: '+url;
+  if(navigator.share){navigator.share({title:document.title,text,url}).catch(()=>{});}
+  else window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank','noopener');
+}
+['shareTop','shareFoot','shareDock'].forEach(id=>document.getElementById(id).addEventListener('click',share));
+
+// PWA
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
+</script>
+</body>
+</html>
